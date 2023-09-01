@@ -1,0 +1,43 @@
+﻿@model Book
+
+<h1>Update Book </h1>
+
+
+<form method="get" asp-action="Saveupdatebook" asp-controller="Book" asp-route-id="@Model.Id">
+
+    <div>
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Price">Price</label>
+        <input class="form-control" asp-for="Price" />
+    </div>
+
+    <div>
+        <label asp-for="Category">Category</label>
+        <input class="form-control" asp-for="Category" />
+    </div>
+
+    <div class="mb-5">
+        <label>Author</label>
+        <select class="form-control" asp-for="AuthorId">
+            @foreach (var author in ViewData["Author"] as IEnumerable<Author>)
+            {
+                <option value="@author.Id">@author.Name</option>
+            }
+
+
+        </select>
+
+    </div>
+
+
+    <input type="submit" value="Update Book" class="btn btn-primary" />
+    <a href="/Book" class="btn btn-primary">Back To List</a>
+
+
+
+
+</form>

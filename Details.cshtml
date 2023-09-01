@@ -1,0 +1,29 @@
+﻿<h1>Books Details </h1>
+
+
+@if (Model == null)
+{
+
+    <h1> this book is not found</h1>
+}
+else
+{
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Model?.Id</h5>
+                <p class="card-text">@Model?.Name</p>
+                <p class="card-text">@Model?.Price</p>
+                <p class="card-text">@Model?.Category</p>
+                <p class="card-text">@Model?.Author</p>
+                <a href="/Book" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+
+
+
+}
+
+

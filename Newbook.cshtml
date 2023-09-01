@@ -1,0 +1,47 @@
+﻿@model Book
+
+
+<h1>Add New Book </h1>
+
+<form method="get" asp-action="Savebook" asp-controller="Book">
+
+    <div>
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Price">Price</label>
+        <input class="form-control" asp-for="Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Category">Category</label>
+        <input class="form-control" asp-for="Category" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-5">
+        <label>Author</label>
+        <select class="form-control" asp-for="AuthorId">
+            @foreach(var author in ViewData["Author"] as IEnumerable<Author>)
+            {
+                <option value="@author.Id">@author.Name</option>
+            }
+
+
+        </select>
+        <span asp-validation-for="AuthorId" class="text-danger"></span>
+
+    </div>
+
+
+    <input type="submit" value="Add Book" class="btn btn-primary" />
+    <a href="/Book" class="btn btn-primary">Back To List</a>
+
+
+
+
+</form>

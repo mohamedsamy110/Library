@@ -1,0 +1,20 @@
+﻿
+
+<a href="/Book/Newbook" class="btn btn-primary">Create New Book</a>
+@foreach (Book book in Model){
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@book.Id</h5>
+                <p class="card-text">@book.Name</p>
+                <p class="card-text">@book.Price</p>
+                <p class="card-text">@book.Category</p>
+                <p class="card-text">@book.Author</p>
+                <a href="/Book/Details/@book.Id" class="btn btn-primary">details</a>
+                <a href="/Book/Updatebook/@book.Id" class="btn btn-secondary"> Update Book</a>
+                <a href="/Book/Delete/@book.Id" class="btn btn-danger">Delete Book</a>
+            </div>
+        </div>
+    </div>
+
+}
